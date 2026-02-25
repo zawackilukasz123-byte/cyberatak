@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opłata za przesyłkę</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f2f2f2;
+}
+
+.topbar{
+    background:#ffcc00;
+    padding:15px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.container{
+    max-width:400px;
+    margin:60px auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.1);
+}
+
+h2{
+    text-align:center;
+}
+
+.amount{
+    text-align:center;
+    font-size:22px;
+    color:#d10000;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+button{
+    width:100%;
+    padding:14px;
+    background:#ffcc00;
+    border:none;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:16px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="topbar">
+    Firma Kurierska – Opłata dodatkowa
+</div>
+
+<div class="container">
+    <h2>Twoja paczka została zatrzymana</h2>
+    <p class="amount">Do zapłaty: 2,50 zł</p>
+
+    <form onsubmit="pokazKonsekwencje(event)">
+        <input type="text" placeholder="Imię i nazwisko" required>
+        <input type="text" placeholder="Numer karty" required>
+        <input type="text" placeholder="Data ważności" required>
+        <input type="text" placeholder="CVV" required>
+        <button type="submit">Zapłać teraz</button>
+    </form>
+</div>
+
+<script>
+function pokazKonsekwencje(e){
+    e.preventDefault();
+
+    document.body.innerHTML = `
+    <div style="background:black;color:white;height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;text-align:center;font-family:Arial;">
+        <h1 style="color:red;font-size:50px;margin-bottom:20px;">
+            Pobrano 1000 zł z konta
+        </h1>
+        <p style="font-size:22px;">
+           
+        </p>
+        <p style="margin-top:20px;color:#ccc;">
+            
+        </p>
+    </div>
+    `;
+}
+</script>
+
+</body>
+</html>
